@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { auth, db } from '../lib/firebase';
 import { onAuthStateChanged, User } from 'firebase/auth';
-import { doc, getDoc } from 'firebase/firestore';
+import { doc, getDoc, onSnapshot } from 'firebase/firestore';
 
 interface AuthContextType {
   user: User | null;
@@ -29,26 +29,38 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const [membershipStatus, setMembershipStatus] = useState<AuthContextType['membershipStatus']>(null);
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+    let unsubscribeUser: (() => void) | undefined;
+    
+    const unsubscribeAuth = onAuthStateChanged(auth, async (user) => {
       setUser(user);
       
       if (user) {
-        const userDoc = await getDoc(doc(db, 'users', user.uid));
-        const userData = userDoc.data();
-        setIsAdmin(userData?.role === 'admin');
-        setMembershipStatus({
-          active: userData?.membershipActive || false,
-          expiryDate: userData?.membershipExpiry?.toDate() || null,
+        // Set up real-time listener for user data
+        unsubscribeUser = onSnapshot(doc(db, 'users', user.uid), (doc) => {
+          const userData = doc.data();
+          setIsAdmin(userData?.role === 'admin');
+          setMembershipStatus({
+            active: userData?.membershipActive || false,
+            expiryDate: userData?.membershipExpiry?.toDate() || null,
+          });
         });
       } else {
         setIsAdmin(false);
         setMembershipStatus(null);
+        if (unsubscribeUser) {
+          unsubscribeUser();
+        }
       }
       
       setLoading(false);
     });
 
-    return unsubscribe;
+    return () => {
+      unsubscribeAuth();
+      if (unsubscribeUser) {
+        unsubscribeUser();
+      }
+    };
   }, []);
 
   return (
