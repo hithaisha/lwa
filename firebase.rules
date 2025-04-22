@@ -17,13 +17,18 @@ service cloud.firestore {
         get(/databases/$(database)/documents/users/$(request.auth.uid)).data.membershipExpiry > request.time;
     }
 
+    function isOwner(userId) {
+      return request.auth.uid == userId;
+    }
+
     // Users collection
     match /users/{userId} {
-      allow read: if isAuthenticated() && (request.auth.uid == userId || isAdmin());
-      allow create: if isAuthenticated() && request.auth.uid == userId;
-      allow update: if isAdmin() || (request.auth.uid == userId && 
+      allow read: if isAuthenticated() && (isOwner(userId) || isAdmin());
+      allow create: if isAuthenticated() && isOwner(userId);
+      allow update: if isAdmin() || (isOwner(userId) && 
         (!request.resource.data.diff(resource.data).affectedKeys()
           .hasAny(['role', 'membershipActive', 'membershipExpiry'])));
+      allow list: if isAdmin();
     }
 
     // Posts collection
@@ -35,13 +40,13 @@ service cloud.firestore {
       match /comments/{commentId} {
         allow read: if true;
         allow create: if isActiveMember();
-        allow update, delete: if request.auth.uid == resource.data.userId || isAdmin();
+        allow update, delete: if isOwner(resource.data.userId) || isAdmin();
       }
       
       // Likes subcollection
       match /likes/{likeId} {
         allow read: if true;
-        allow create, delete: if isActiveMember() && request.auth.uid == likeId;
+        allow create, delete: if isActiveMember() && isOwner(likeId);
       }
     }
 
@@ -53,7 +58,7 @@ service cloud.firestore {
       // Attendees subcollection
       match /attendees/{attendeeId} {
         allow read: if true;
-        allow create, delete: if isActiveMember() && request.auth.uid == attendeeId;
+        allow create, delete: if isActiveMember() && isOwner(attendeeId);
       }
     }
 
@@ -72,7 +77,7 @@ service cloud.firestore {
     // MembershipPayments collection
     match /membershipPayments/{paymentId} {
       allow read: if isAuthenticated() && 
-        (request.auth.uid == resource.data.userId || isAdmin());
+        (isOwner(resource.data.userId) || isAdmin());
       allow create, update: if isAdmin();
     }
 
@@ -85,6 +90,27 @@ service cloud.firestore {
     // Gallery collection
     match /gallery/{imageId} {
       allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // Donations collection
+    match /donations/{donationId} {
+      allow read: if isAuthenticated() && 
+        (isOwner(resource.data.userId) || isAdmin());
+      allow create: if isAuthenticated();
+      allow update, delete: if isAdmin();
+    }
+
+    // Newsletter collection
+    match /newsletter/{subscriberId} {
+      allow read: if isOwner(subscriberId) || isAdmin();
+      allow create: if true;
+      allow delete: if isOwner(subscriberId) || isAdmin();
+    }
+
+    // Resources collection
+    match /resources/{resourceId} {
+      allow read: if isActiveMember() || isAdmin();
       allow write: if isAdmin();
     }
   }
