@@ -6,19 +6,23 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ['lucide-react'],
   },
-  server: {
-    historyApiFallback: true,
-  },
-  preview: {
-    historyApiFallback: true,
-  },
   build: {
+    outDir: 'dist',
     rollupOptions: {
       output: {
         manualChunks: {
           vendor: ['react', 'react-dom', 'react-router-dom'],
+          firebase: ['firebase/app', 'firebase/auth', 'firebase/firestore'],
         },
       },
     },
+  },
+  server: {
+    port: 3000,
+    historyApiFallback: true,
+  },
+  preview: {
+    port: 3000,
+    historyApiFallback: true,
   },
 });

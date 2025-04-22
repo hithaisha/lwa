@@ -7,6 +7,16 @@
     <meta name="theme-color" content="#1d4ed8" />
     <meta name="description" content="Luton Welfare Association - Building stronger communities through unity, support, and collective action" />
     <title>Luton Welfare Association</title>
+    <script>
+      // Handle direct navigation in SPA
+      (function() {
+        var redirect = sessionStorage.redirect;
+        delete sessionStorage.redirect;
+        if (redirect && redirect !== location.href) {
+          history.replaceState(null, null, redirect);
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

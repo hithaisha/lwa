@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-d
 import { Toaster } from 'react-hot-toast';
 import { AuthProvider } from './contexts/AuthContext';
 import Navbar from './components/Navbar';
+
+// Eager load Home component for better initial load performance
 import Home from './pages/Home';
 
-// Lazy load other pages for better performance
+// Lazy load other components
 const Login = React.lazy(() => import('./pages/Login'));
 const Register = React.lazy(() => import('./pages/Register'));
 const RegistrationPending = React.lazy(() => import('./pages/RegistrationPending'));
@@ -43,13 +45,14 @@ function App() {
                   }
                 />
                 <Route
-                  path="/dashboard"
+                  path="/dashboard/*"
                   element={
                     <ProtectedRoute>
                       <MemberDashboard />
                     </ProtectedRoute>
                   }
                 />
+                {/* Catch all route - must be last */}
                 <Route path="*" element={<Navigate to="/" replace />} />
               </Routes>
             </Suspense>
