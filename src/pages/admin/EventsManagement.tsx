@@ -1,15 +1,23 @@
-import React, { useState, useEffect } from 'react';
-import { db } from '../../lib/firebase';
-import { collection, addDoc, query, getDocs, deleteDoc, doc, serverTimestamp } from 'firebase/firestore';
-import { toast } from 'react-hot-toast';
-import { Trash2, Calendar } from 'lucide-react';
+import React, { useState, useEffect } from "react";
+import { db } from "../../lib/firebase";
+import {
+  collection,
+  addDoc,
+  query,
+  getDocs,
+  deleteDoc,
+  doc,
+  serverTimestamp,
+} from "firebase/firestore";
+import { toast } from "react-hot-toast";
+import { Trash2, Calendar } from "lucide-react";
 
 const EventsManagement = () => {
-  const [title, setTitle] = useState('');
-  const [description, setDescription] = useState('');
-  const [date, setDate] = useState('');
-  const [time, setTime] = useState('');
-  const [location, setLocation] = useState('');
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [date, setDate] = useState("");
+  const [time, setTime] = useState("");
+  const [location, setLocation] = useState("");
   const [events, setEvents] = useState([]);
   const [loading, setLoading] = useState(true);
 
@@ -19,18 +27,18 @@ const EventsManagement = () => {
 
   const fetchEvents = async () => {
     try {
-      const eventsQuery = query(collection(db, 'events'));
+      const eventsQuery = query(collection(db, "events"));
       const snapshot = await getDocs(eventsQuery);
-      const eventsData = snapshot.docs.map(doc => ({
+      const eventsData = snapshot.docs.map((doc) => ({
         id: doc.id,
         ...doc.data(),
-        date: doc.data().date?.toDate().toLocaleDateString() || 'N/A',
-        time: doc.data().time || 'N/A'
+        date: doc.data().date?.toDate().toLocaleDateString() || "N/A",
+        time: doc.data().time || "N/A",
       }));
       setEvents(eventsData);
     } catch (error) {
-      console.error('Error fetching events:', error);
-      toast.error('Failed to load events');
+      console.error("Error fetching events:", error);
+      toast.error("Failed to load events");
     } finally {
       setLoading(false);
     }
@@ -39,35 +47,35 @@ const EventsManagement = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await addDoc(collection(db, 'events'), {
+      await addDoc(collection(db, "events"), {
         title,
         description,
         date: new Date(date),
         time,
         location,
-        createdAt: serverTimestamp()
+        createdAt: serverTimestamp(),
       });
-      toast.success('Event created successfully');
-      setTitle('');
-      setDescription('');
-      setDate('');
-      setTime('');
-      setLocation('');
+      toast.success("Event created successfully");
+      setTitle("");
+      setDescription("");
+      setDate("");
+      setTime("");
+      setLocation("");
       fetchEvents();
     } catch (error) {
-      console.error('Error creating event:', error);
-      toast.error('Failed to create event');
+      console.error("Error creating event:", error);
+      toast.error("Failed to create event");
     }
   };
 
   const handleDelete = async (id) => {
     try {
-      await deleteDoc(doc(db, 'events', id));
-      toast.success('Event deleted successfully');
+      await deleteDoc(doc(db, "events", id));
+      toast.success("Event deleted successfully");
       fetchEvents();
     } catch (error) {
-      console.error('Error deleting event:', error);
-      toast.error('Failed to delete event');
+      console.error("Error deleting event:", error);
+      toast.error("Failed to delete event");
     }
   };
 
@@ -86,7 +94,10 @@ const EventsManagement = () => {
         <form onSubmit={handleSubmit} className="space-y-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div>
-              <label htmlFor="title" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="title"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Title
               </label>
               <input
@@ -99,7 +110,10 @@ const EventsManagement = () => {
               />
             </div>
             <div>
-              <label htmlFor="location" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="location"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Location
               </label>
               <input
@@ -112,7 +126,10 @@ const EventsManagement = () => {
               />
             </div>
             <div>
-              <label htmlFor="date" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="date"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Date
               </label>
               <input
@@ -125,7 +142,10 @@ const EventsManagement = () => {
               />
             </div>
             <div>
-              <label htmlFor="time" className="block text-sm font-medium text-gray-700">
+              <label
+                htmlFor="time"
+                className="block text-sm font-medium text-gray-700"
+              >
                 Time
               </label>
               <input
@@ -139,7 +159,10 @@ const EventsManagement = () => {
             </div>
           </div>
           <div>
-            <label htmlFor="description" className="block text-sm font-medium text-gray-700">
+            <label
+              htmlFor="description"
+              className="block text-sm font-medium text-gray-700"
+            >
               Description
             </label>
             <textarea
@@ -180,7 +203,9 @@ const EventsManagement = () => {
                         <p className="text-sm text-gray-500 mt-1">
                           {event.date} at {event.time} • {event.location}
                         </p>
-                        <p className="mt-2 text-gray-700">{event.description}</p>
+                        <p className="mt-2 text-gray-700">
+                          {event.description}
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -194,7 +219,9 @@ const EventsManagement = () => {
               </div>
             ))}
             {events.length === 0 && (
-              <p className="text-gray-500 text-center py-4">No events scheduled</p>
+              <p className="text-gray-500 text-center py-4">
+                No events scheduled
+              </p>
             )}
           </div>
         </div>
