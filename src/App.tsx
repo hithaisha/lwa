@@ -1,20 +1,30 @@
-import React, { Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Toaster } from 'react-hot-toast';
-import { AuthProvider } from './contexts/AuthContext';
-import Navbar from './components/Navbar';
-
+import React, { Suspense } from "react";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { Toaster } from "react-hot-toast";
+import { AuthProvider } from "./contexts/AuthContext";
+import Navbar from "./components/Navbar";
+import "./App.css";
 // Eager load Home component for better initial load performance
-import Home from './pages/Home';
+import Home from "./pages/Home";
+import Footer from "./pages/Footer";
+import About from "./pages/About/about";
+import Gallery from "./pages/Gallery/Gallery";
 
 // Lazy load other components
-const Login = React.lazy(() => import('./pages/Login'));
-const Register = React.lazy(() => import('./pages/Register'));
-const RegistrationPending = React.lazy(() => import('./pages/RegistrationPending'));
-const AdminDashboard = React.lazy(() => import('./pages/AdminDashboard'));
-const MemberDashboard = React.lazy(() => import('./pages/MemberDashboard'));
-const ProtectedRoute = React.lazy(() => import('./components/ProtectedRoute'));
-const AdminRoute = React.lazy(() => import('./components/AdminRoute'));
+const Login = React.lazy(() => import("./pages/Login"));
+const Register = React.lazy(() => import("./pages/Register"));
+const RegistrationPending = React.lazy(
+  () => import("./pages/RegistrationPending")
+);
+const AdminDashboard = React.lazy(() => import("./pages/AdminDashboard"));
+const MemberDashboard = React.lazy(() => import("./pages/MemberDashboard"));
+const ProtectedRoute = React.lazy(() => import("./components/ProtectedRoute"));
+const AdminRoute = React.lazy(() => import("./components/AdminRoute"));
 
 // Loading component for suspense fallback
 const LoadingSpinner = () => (
@@ -33,9 +43,14 @@ function App() {
             <Suspense fallback={<LoadingSpinner />}>
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/gallery" element={<Gallery />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/register" element={<Register />} />
-                <Route path="/registration-pending" element={<RegistrationPending />} />
+                <Route
+                  path="/registration-pending"
+                  element={<RegistrationPending />}
+                />
                 <Route
                   path="/admin/*"
                   element={
@@ -57,16 +72,17 @@ function App() {
               </Routes>
             </Suspense>
           </main>
-          <Toaster 
+          <Footer />
+          <Toaster
             position="top-right"
             toastOptions={{
               duration: 3000,
               style: {
-                background: '#363636',
-                color: '#fff',
-                fontSize: '0.875rem',
-                padding: '0.75rem 1rem',
-                borderRadius: '0.5rem',
+                background: "#363636",
+                color: "#fff",
+                fontSize: "0.875rem",
+                padding: "0.75rem 1rem",
+                borderRadius: "0.5rem",
               },
             }}
           />
