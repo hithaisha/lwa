@@ -5,11 +5,11 @@ import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyA0bVcLd7lN36KMw4ZDs9L_Doki8zWh2Pk",
-  authDomain: "lutonwelfareassociation.firebaseapp.com",
-  projectId: "lutonwelfareassociation",
-  storageBucket: "lutonwelfareassociation.firebasestorage.app",
-  messagingSenderId: "367168461201",
+  apiKey: "AIzaSyCqrW5BX-Hje2qPac8Z-VzhmX1YzUr20D4",
+  authDomain: "luton-welfare.firebaseapp.com",
+  projectId: "luton-welfare",
+  // storageBucket: "lutonwelfareassociation.firebasestorage.app",
+  messagingSenderId: "459166096265",
   appId: "1:367168461201:web:de52bb2477f915cf75a230",
   measurementId: "G-84LW3LZWG4"
 };

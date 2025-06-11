@@ -246,7 +246,7 @@ const GalleryManagement = () => {
               className="px-6 py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white rounded-xl font-semibold hover:scale-105 transform transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               <span className="mr-2">+</span>
-              Add New Event
+              Add New 
             </button>
           </div>
         </div>
