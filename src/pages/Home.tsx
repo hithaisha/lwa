@@ -14,7 +14,42 @@ import {
 } from "firebase/firestore";
 import { db } from "../lib/firebase";
 
+// images
+// import img1 from "../assests/imgs/1.jpg";
+import img2 from "../assests/imgs/2.jpg";
+import img3 from "../assests/imgs/3.jpg";
+// import img4 from "../assests/imgs/4.jpg";
+import img5 from "../assests/imgs/5.jpg";
+import img6 from "../assests/imgs/6.jpg";
+import img7 from "../assests/imgs/7.jpg";
+import img8 from "../assests/imgs/8.jpg";
+import img9 from "../assests/imgs/9.jpg";
+import img10 from "../assests/imgs/10.jpg";
+import img11 from "../assests/imgs/11.jpg";
+import img12 from "../assests/imgs/12.jpg";
+// import img13 from "../assests/imgs/13.jpg";
+import img14 from "../assests/imgs/14.jpg";
+import img15 from "../assests/imgs/15.jpg";
+//images
+
 const Home = () => {
+
+  const images = [ img2, img3, img5,img6, img7, img8, img9, img10, img11, img12,img14, img15];
+
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prevIndex) =>
+        prevIndex === images.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+
+
   const { user } = useAuth();
 
   const [events, setEvents] = useState([]);
@@ -57,11 +92,10 @@ const Home = () => {
     <div>
       {/* Hero Section */}
       <div
-        className="relative h-[400px] md:h-[600px] bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&q=80')",
-        }}
+       className="relative h-[400px] md:h-[800px] bg-cover bg-no-repeat bg-center transition-all duration-1000 "
+      style={{
+        backgroundImage: ` url('${images[currentIndex]}')`,
+      }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent">
           <div className="max-w-7xl mx-auto px-4 h-full flex items-center">
