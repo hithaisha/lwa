@@ -1,22 +1,31 @@
-import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth, GoogleAuthProvider } from "firebase/auth";
 import { getFirestore } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
+import { initializeApp, getApps, getApp } from "firebase/app";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCqrW5BX-Hje2qPac8Z-VzhmX1YzUr20D4",
-  authDomain: "luton-welfare.firebaseapp.com",
-  projectId: "luton-welfare",
-  // storageBucket: "lutonwelfareassociation.firebasestorage.app",
-  messagingSenderId: "459166096265",
-  appId: "1:367168461201:web:de52bb2477f915cf75a230",
-  measurementId: "G-84LW3LZWG4"
+  apiKey: "AIzaSyDTQDld43G4sFLcGS7RTRzkX_9Wqfe-Tew",
+  authDomain: "luton-6797c.firebaseapp.com",
+  projectId: "luton-6797c",
+  storageBucket: "luton-6797c.appspot.com", 
+  messagingSenderId: "666830502112",
+  appId: "1:666830502112:web:e301c045b7a63c23c2b885"
 };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+
+const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
+
+// Initialize Analytics only on client side
+let analytics;
+if (typeof window !== "undefined") {
+  analytics = getAnalytics(app);
+}
+
 export const auth = getAuth(app);
 export const googleProvider = new GoogleAuthProvider();
 export const db = getFirestore(app);
 export const storage = getStorage(app);
+
+
+export { app, analytics };
