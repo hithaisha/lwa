@@ -10,13 +10,6 @@ const About = () => {
     "Environmental Care",
   ];
 
-  const stats = [
-    { number: "10,000+", label: "Lives Touched" },
-    { number: "25+", label: "Communities Served" },
-    { number: "15", label: "Years of Service" },
-    { number: "500+", label: "Active Volunteers" },
-  ];
-
   const milestones = [
     {
       year: "2009",
@@ -128,60 +121,10 @@ const About = () => {
           </div>
         </div>
       </section>
-
-      {/* Impact Stats */}
-      <section className="py-20 px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
-            Our Impact in Numbers
-          </h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-            {stats.map((stat, index) => (
-              <div
-                key={index}
-                className="text-center group hover:scale-105 transform transition-all duration-300"
-              >
-                <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-green-200 hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl font-bold text-green-600 mb-2">
-                    {stat.number}
-                  </div>
-                  <div className="text-gray-600 font-medium">{stat.label}</div>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Mission & Vision */}
       <section className="py-20 px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-2 gap-12">
-            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-blue-200">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-2xl flex items-center justify-center mb-6">
-                <svg
-                  className="w-8 h-8 text-white"
-                  fill="currentColor"
-                  viewBox="0 0 20 20"
-                >
-                  <path
-                    fillRule="evenodd"
-                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
-                    clipRule="evenodd"
-                  />
-                </svg>
-              </div>
-              <h3 className="text-3xl font-bold text-gray-800 mb-4">
-                Our Mission
-              </h3>
-              <p className="text-gray-600 text-lg leading-relaxed">
-                To empower underprivileged communities through comprehensive
-                welfare programs, focusing on education, healthcare, and
-                sustainable development while fostering dignity, hope, and
-                self-reliance among those we serve.
-              </p>
-            </div>
-
             <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-green-200">
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
                 <svg
@@ -201,10 +144,120 @@ const About = () => {
                 Our Vision
               </h3>
               <p className="text-gray-600 text-lg leading-relaxed">
-                A world where every individual has equal access to opportunities
-                for growth, where communities thrive together, and where
-                compassion drives sustainable social change for generations to
-                come.
+                To be a vibrant, inclusive, and empowering community
+                organisation that fosters cultural understanding, social
+                wellbeing, and educational opportunity for Sri Lankan and other
+                diverse communities in Luton and surrounding areas.
+              </p>
+            </div>
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-blue-200">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-green-500 rounded-2xl flex items-center justify-center mb-6">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-8.293l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 001.414 1.414L9 9.414V13a1 1 0 102 0V9.414l1.293 1.293a1 1 0 001.414-1.414z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                Our Mission
+              </h3>
+              <p className="text-gray-600 text-lg leading-relaxed mb-2">
+                Our mission is to promote the cultural, national, educational,
+                and spiritual interests of the Sri Lankan community and other
+                ethnic groups through inclusive programmes and services. We aim
+                to:
+              </p>
+              <ul className="list-disc list-inside text-gray-600 text-lg leading-relaxed">
+                <li>
+                  Support children and young people in developing leadership
+                  skills and personal growth
+                </li>
+                <li>
+                  Encourage intergenerational engagement and cultural
+                  appreciation
+                </li>
+                <li>
+                  Organise charitable, educational, and social activities that
+                  unite communities
+                </li>
+                <li>
+                  Foster values of compassion, respect, and mutual support
+                </li>
+                <li>
+                  Provide a platform for collaboration with other local
+                  organisations and service providers
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
+        <div className="max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-1 gap-12">
+            <div className="bg-white/80 backdrop-blur-sm rounded-3xl p-8 shadow-lg border border-green-200">
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-blue-500 rounded-2xl flex items-center justify-center mb-6">
+                <svg
+                  className="w-8 h-8 text-white"
+                  fill="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    fillRule="evenodd"
+                    d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm0 18a8 8 0 1 1 8-8 8.009 8.009 0 0 1-8 8zm0-14a6 6 0 1 0 6 6 6.007 6.007 0 0 0-6-6zm0 10a4 4 0 1 1 4-4 4.005 4.005 0 0 1-4 4z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </div>
+              <h3 className="text-3xl font-bold text-gray-800 mb-4">
+                Our Objectives
+              </h3>
+              <p className="text-gray-600 text-lg leading-relaxed mb-4">
+                The objectives of LSLWA shall be:
+              </p>
+              <ol className="list-decimal list-inside text-gray-600 text-lg leading-relaxed mb-4">
+                <li>
+                  To promote the national, cultural, religious, and educational
+                  interests of the Sri Lankan community in Luton and surrounding
+                  areas.
+                </li>
+                <li>
+                  To provide welfare, advice, and assistance to members of the
+                  community.
+                </li>
+                <li>
+                  To organise social, cultural, and religious community events.
+                </li>
+                <li>
+                  To publish or distribute information relevant to Sri Lankans
+                  and Sri Lanka.
+                </li>
+                <li>
+                  To cooperate with other charitable organisations and community
+                  bodies with similar interests.
+                </li>
+                <li>
+                  To raise funds and donations for community support initiatives
+                  while adhering to charitable regulations.
+                </li>
+                <li>
+                  To acquire or lease property necessary for conducting
+                  organisational activities.
+                </li>
+              </ol>
+              <p className="text-gray-600 text-lg leading-relaxed">
+                LSLWA shall remain non-political, multi-religious, and
+                multi-ethnic. It shall not be affiliated with any Sri Lankan
+                political party. However, it may collaborate with British
+                political representatives or political parties for the benefit
+                of the Sri Lankan community.
               </p>
             </div>
           </div>
@@ -212,7 +265,7 @@ const About = () => {
       </section>
 
       {/* Journey Timeline */}
-      <section className="py-20 px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
+      {/* <section className="py-20 px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
             Our Journey
@@ -241,45 +294,47 @@ const About = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Values Section */}
       <section className="py-20 px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-4xl font-bold text-center mb-16 text-gray-800">
-            Our Core Values
+            What Activities Do We Do?
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
             {[
               {
-                icon: "🤝",
-                title: "Compassion",
-                desc: "We serve with empathy and understanding",
+                title: "Community & Welfare Services ",
+                desc: "Providing advice, support, and assistance to members of the Sri Lankan community in Luton and surrounding areas",
               },
               {
-                icon: "🌱",
-                title: "Sustainability",
-                desc: "Creating lasting positive change",
+                title: "Cultural & Religious Events ",
+                desc: "Organising festivals, gatherings, and religious celebrations to promote cultural heritage and inclusivity",
               },
               {
-                icon: "🤗",
-                title: "Inclusivity",
-                desc: "Embracing diversity in all our programs",
+                title: "Educational Initiatives ",
+                desc: "Offering scholarships, workshops, and educational support for children and adults",
               },
               {
-                icon: "💪",
-                title: "Empowerment",
-                desc: "Building strength within communities",
+                title: "Charitable Fundraising ",
+                desc: "Raising funds for community welfare, disaster relief, and charitable projects while adhering to charity laws",
               },
               {
-                icon: "🔍",
-                title: "Transparency",
-                desc: "Open and accountable operations",
+                title: "Publications & Awareness ",
+                desc: "Distributing information on Sri Lankan culture, welfare services, and integration support for newcomers",
               },
               {
-                icon: "🌟",
-                title: "Excellence",
-                desc: "Striving for the highest impact",
+                title: "Partnerships & Collaborations",
+                desc: "Working with other charitable organisations and government bodies to enhance community support",
+              },
+              {
+                title: "Maintaining a Members' Database ",
+                desc: "Keeping an up-to-date record of all members, ensuring compliance with data protection regulations",
+              },
+              {
+                title: "Collecting Nominal Membership Fees ",
+                desc: "Managing voluntary contributions to support the operational activities of the organisation",
               },
             ].map((value, index) => (
               <div
@@ -287,7 +342,6 @@ const About = () => {
                 className="text-center group hover:scale-105 transform transition-all duration-300"
               >
                 <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300">
-                  <div className="text-4xl mb-4">{value.icon}</div>
                   <h3 className="text-xl font-bold text-gray-800 mb-3">
                     {value.title}
                   </h3>

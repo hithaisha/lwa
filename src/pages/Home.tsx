@@ -33,8 +33,20 @@ import img15 from "../assests/imgs/15.jpg";
 //images
 
 const Home = () => {
-
-  const images = [ img2, img3, img5,img6, img7, img8, img9, img10, img11, img12,img14, img15];
+  const images = [
+    img2,
+    img3,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img14,
+    img15,
+  ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -47,8 +59,6 @@ const Home = () => {
 
     return () => clearInterval(interval);
   }, [images.length]);
-
-
 
   const { user } = useAuth();
 
@@ -92,10 +102,10 @@ const Home = () => {
     <div>
       {/* Hero Section */}
       <div
-       className="relative h-[400px] md:h-[800px] bg-cover bg-no-repeat bg-center transition-all duration-1000 "
-      style={{
-        backgroundImage: ` url('${images[currentIndex]}')`,
-      }}
+        className="relative h-[400px] md:h-[800px] bg-cover bg-no-repeat bg-center transition-all duration-1000 "
+        style={{
+          backgroundImage: ` url('${images[currentIndex]}')`,
+        }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-blue-900/50 to-transparent">
           <div className="max-w-7xl mx-auto px-4 h-full flex items-center">
