@@ -49,6 +49,13 @@ const Navbar = () => {
         <span>About</span>
       </Link>
       <Link
+        to="/Team"
+        className="w-full md:w-auto hover:text-blue-200 flex items-center space-x-1 group p-2 md:p-0"
+      >
+        {/* <SiAboutdotme className="h-5 w-5 group-hover:scale-110 transition-transform" /> */}
+        <span>Team</span>
+      </Link>
+      <Link
         to="/Gallery"
         className="w-full md:w-auto hover:text-blue-200 flex items-center space-x-1 group p-2 md:p-0"
       >
