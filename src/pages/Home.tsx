@@ -240,6 +240,100 @@ const Home = () => {
           </div>
         </div>
       </div>
+      {/* Volunteer Spotlight */}
+<div className="bg-gray-50 py-12 md:py-16">
+  <div className="max-w-7xl mx-auto px-4">
+    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 md:mb-12 text-center">
+      Volunteer Spotlight
+    </h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="bg-white rounded-xl shadow-md p-6 text-center">
+        <img
+          src="https://randomuser.me/api/portraits/men/32.jpg"
+          alt="Volunteer"
+          className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
+        />
+        <h3 className="text-lg font-semibold mb-1">Kasun Perera</h3>
+        <p className="text-sm text-gray-600">
+          Coordinated our youth education drive and led multiple workshops.
+        </p>
+      </div>
+      <div className="bg-white rounded-xl shadow-md p-6 text-center">
+        <img
+          src="https://randomuser.me/api/portraits/women/44.jpg"
+          alt="Volunteer"
+          className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
+        />
+        <h3 className="text-lg font-semibold mb-1">Tharushi Fernando</h3>
+        <p className="text-sm text-gray-600">
+          Key contributor in the Women’s Empowerment Forum and welfare outreach.
+        </p>
+      </div>
+      <div className="bg-white rounded-xl shadow-md p-6 text-center">
+        <img
+          src="https://randomuser.me/api/portraits/men/75.jpg"
+          alt="Volunteer"
+          className="w-24 h-24 mx-auto rounded-full mb-4 object-cover"
+        />
+        <h3 className="text-lg font-semibold mb-1">Nuwan Jayasena</h3>
+        <p className="text-sm text-gray-600">
+          Volunteered for logistics and helped execute over 10 successful events.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{/* Community Testimonials */}
+<div className="bg-white py-12 md:py-16">
+  <div className="max-w-4xl mx-auto px-4 text-center">
+    <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8">
+      What Our Members Say
+    </h2>
+    <div className="grid gap-6 md:grid-cols-2">
+      <blockquote className="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <p className="text-gray-700 italic">
+          “LSLWA made me feel at home in a new country. The community is truly like a family.”
+        </p>
+        <footer className="mt-4 text-sm font-semibold text-gray-600">
+          – Anusha W., Member
+        </footer>
+      </blockquote>
+      <blockquote className="bg-gray-50 p-6 rounded-lg shadow-sm">
+        <p className="text-gray-700 italic">
+          “Thanks to LSLWA, my son discovered his leadership potential during a youth workshop.”
+        </p>
+        <footer className="mt-4 text-sm font-semibold text-gray-600">
+          – Sampath D., Parent
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</div>
+
+{/* Vision & Mission Section */}
+<div className="bg-blue-50 py-12 md:py-16">
+  <div className="max-w-5xl mx-auto px-4">
+    <h2 className="text-2xl md:text-3xl font-bold text-center text-blue-900 mb-8">
+      Our Vision & Mission
+    </h2>
+    <div className="text-gray-800 text-justify space-y-6">
+      <div>
+        <h3 className="text-xl font-semibold mb-2 text-blue-800">Vision</h3>
+        <p>
+          To create a connected, compassionate, and empowered Sri Lankan community in Luton that celebrates culture, promotes unity, and uplifts every generation.
+        </p>
+      </div>
+      <div>
+        <h3 className="text-xl font-semibold mb-2 text-blue-800">Mission</h3>
+        <p>
+          Through events, education, welfare initiatives, and community-building efforts, we strive to be a beacon of support and inspiration for Sri Lankans in the UK, regardless of religion, ethnicity, or background.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+
 
       {/* Call to Action */}
       <div className="bg-blue-700 text-white py-12 md:py-16">

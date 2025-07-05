@@ -73,7 +73,7 @@ const About = () => {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-500 to-blue-500 p-1">
               <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                 <svg
@@ -89,7 +89,7 @@ const About = () => {
                 </svg>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-green-700 via-blue-600 to-green-700 bg-clip-text text-transparent">
             Luton Welfare Association

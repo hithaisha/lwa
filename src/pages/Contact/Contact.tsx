@@ -25,7 +25,7 @@ const Contact: React.FC = () => {
         <div className="absolute top-3/4 -right-4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000" />
         <div className="absolute bottom-1/4 left-1/3 w-64 h-64 bg-yellow-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-2000" />
       </div>
-      <div className="mb-8">
+      {/* <div className="mb-8">
   <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-500 to-blue-500 p-1">
     <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
       <svg
@@ -41,12 +41,12 @@ const Contact: React.FC = () => {
       </svg>
     </div>
   </div>
-</div>
+</div> */}
 
 
       {/* Title Section */}
       <div className="text-center fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000 mb-10">
-        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-700 via-green-600 to-blue-700 bg-clip-text text-transparent">
+        <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-700  to-blue-700 bg-clip-text text-transparent">
           Contact Us
         </h1>
         <p className="text-lg mt-4 text-blue-700 font-medium italic">
@@ -92,7 +92,7 @@ const Contact: React.FC = () => {
           />
           <button
             type="submit"
-            className="w-full py-3 bg-gradient-to-r from-green-600 to-blue-600 text-white font-semibold rounded-full hover:scale-105 transform transition-all duration-300 shadow-md"
+            className="w-full py-3 bg-gradient-to-r from-blue-600 to-blue-600 text-white font-semibold rounded-full hover:scale-105 transform transition-all duration-300 shadow-md"
           >
             Send Message
           </button>
@@ -101,17 +101,17 @@ const Contact: React.FC = () => {
         {/* Contact Info */}
         <div className="bg-white/80 backdrop-blur-md p-8 rounded-3xl shadow-md border border-green-100 text-gray-700 space-y-6 text-lg">
           <div>
-            <span className="font-semibold text-blue-700">📍 Address:</span>
+            <span className="font-semibold text-blue-700">Address:</span>
             <br />
             29 High Town, Luton, LU2 0BW, United Kingdom
           </div>
           <div>
-            <span className="font-semibold text-blue-700">📞 Mobile:</span>
+            <span className="font-semibold text-blue-700"> Mobile:</span>
             <br />
             07770 519 723
           </div>
           <div>
-            <span className="font-semibold text-blue-700">✉️ Email:</span>
+            <span className="font-semibold text-blue-700"> Email:</span>
             <br />
             <a href="mailto:lutonsrilankanWA@gmail.com" className="text-blue-600 hover:underline">
 
@@ -119,7 +119,7 @@ const Contact: React.FC = () => {
             </a>
           </div>
           <div>
-            <span className="font-semibold text-blue-700">🌐 Facebook:</span>
+            <span className="font-semibold text-blue-700"> Facebook:</span>
             <br />
             <a href="https://www.facebook.com/LutonSriLankanWelfareAssociation" target="_blank" rel="noopener noreferrer" className="text-blue-600 hover:underline">
 

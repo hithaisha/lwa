@@ -20,7 +20,7 @@ const Team: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-green-50 text-gray-800">
-      {/* Decorative Background */}
+
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-1/4 -left-4 w-64 h-64 bg-green-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse" />
         <div className="absolute top-3/4 -right-4 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-30 animate-pulse delay-1000" />
@@ -28,7 +28,7 @@ const Team: React.FC = () => {
       </div>
 
       {/* Icon */}
-      <div className="mt-5 py-10">
+      {/* <div className="mt-5 py-10">
         <div className="w-24 h-24 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-500 to-blue-500 p-1">
           <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
             <svg
@@ -40,11 +40,10 @@ const Team: React.FC = () => {
             </svg>
           </div>
         </div>
-      </div>
+      </div> */}
 
-      {/* Title */}
       <div className="text-center fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
-        <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-700 via-green-600 to-blue-700 bg-clip-text text-transparent">
+        <h1 className="text-6xl font-bold bg-gradient-to-r from-blue-700  to-blue-700 bg-clip-text text-transparent py-8">
           Our Team
         </h1>
         <p className="text-blue-600 mt-4 italic text-xl font-medium mb-8">
@@ -52,8 +51,9 @@ const Team: React.FC = () => {
         </p>
       </div>
 
-      {/* President's Message */}
+
       <section className="max-w-5xl mx-auto bg-white/80 backdrop-blur-md rounded-3xl shadow-lg p-8 mb-20 border border-blue-100 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
+        <p className="text-center text-2xl font-bold mb-4">President's Message</p>
         <p>Dear Sponsors, Members, and Friends,</p>
         <p className="mt-4">
           It is a pleasure to share this update from the Luton Sri Lankan Welfare Association
@@ -93,12 +93,11 @@ const Team: React.FC = () => {
         </div>
       </section>
 
-      {/* Executive Team Section */}
       <section className="text-center px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
         <h2 className="text-3xl font-bold text-blue-800 mb-4">Our Executive Team – 2025</h2>
         <p className="text-gray-600 mb-8">Meet the leaders behind LSLWA</p>
 
-        {/* Team Group Photo */}
+
         <img
           src={img3}
           alt="Executive Team 2025"
@@ -106,7 +105,7 @@ const Team: React.FC = () => {
         />
 
         {/* Team Members Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-6xl mx-auto mb-14">
           {[
             {
               name: "Ernest Arrawwalage",
@@ -123,7 +122,7 @@ const Team: React.FC = () => {
               role: "Treasurer",
               img: "/path-to-profile3.jpg",
             },
-            // Add more members as needed
+
           ].map((member, index) => (
             <div
               key={index}
@@ -141,7 +140,7 @@ const Team: React.FC = () => {
         </div>
       </section>
 
-      {/* Fade-In CSS */}
+
       <style jsx>{`
         .fade-in-on-scroll {
           transition: all 1s ease-out;

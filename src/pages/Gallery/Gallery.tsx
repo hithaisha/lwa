@@ -205,7 +205,7 @@ const Gallery = () => {
             isVisible ? "translate-y-0 opacity-100" : "translate-y-10 opacity-0"
           }`}
         >
-          <div className="mb-8">
+          {/* <div className="mb-8">
             <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-green-500 to-blue-500 p-1">
               <div className="w-full h-full rounded-full bg-white flex items-center justify-center">
                 <svg
@@ -221,32 +221,33 @@ const Gallery = () => {
                 </svg>
               </div>
             </div>
-          </div>
+          </div> */}
 
-          <h1 className="text-5xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-green-700 via-blue-600 to-green-700 bg-clip-text text-transparent">
+          <h1 className="text-5xl md:text-6xl font-bold mb-12 bg-gradient-to-r from-green-700 via-blue-600 to-green-700 bg-clip-text text-transparent">
             Our Projects
           </h1>
 
-          <p className="text-xl text-gray-600 mb-12 max-w-3xl mx-auto leading-relaxed">
-            Since its establishment in February 2024, the Luton Sri Lankan Welfare Association
-(LSLWA) has delivered several successful and impactful events that brought the
-community together in the spirit of inclusivity, cultural celebration, and solidarity.<br></br><br></br>
-Many of these events were first-of-their-kind initiatives in the region, reflecting LSLWA’s
-strong commitment to supporting those in need while proudly preserving and promoting Sri
-Lankan heritage throughout Luton, Dunstable, and the wider Bedfordshire area.<br></br><br></br>
-We have also placed particular emphasis on developing leadership skills among children
-and young people, empowering them to take on responsibilities and make meaningful
-contributions to the community.<br></br><br></br>
-These achievements would not have been possible without the unwavering support of our
-members, friends, and generous sponsors, whose involvement has helped make each
-event both memorable and impactful, further strengthening the bonds within our vibrant and
-growing community.
-          </p>
+          <section className="max-w-5xl mx-auto bg-white/80 backdrop-blur-md rounded-3xl shadow-lg p-8 border border-blue-100 text-justify">
+  Since its establishment in February 2024, the Luton Sri Lankan Welfare Association
+  (LSLWA) has delivered several successful and impactful events that brought the
+  community together in the spirit of inclusivity, cultural celebration, and solidarity.
+  Many of these events were first-of-their-kind initiatives in the region, reflecting LSLWA’s
+  strong commitment to supporting those in need while proudly preserving and promoting Sri
+  Lankan heritage throughout Luton, Dunstable, and the wider Bedfordshire area.<br></br><br></br>
+  We have also placed particular emphasis on developing leadership skills among children
+  and young people, empowering them to take on responsibilities and make meaningful
+  contributions to the community.
+  These achievements would not have been possible without the unwavering support of our
+  members, friends, and generous sponsors, whose involvement has helped make each
+  event both memorable and impactful, further strengthening the bonds within our vibrant and
+  growing community.
+      </section>
+
         </div>
       </section>
 
       {/* Category Filter */}
-      <section className="py-8 px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
+      <section className=" px-6 fade-in-on-scroll opacity-0 transform translate-y-10 transition-all duration-1000">
         <div className="max-w-6xl mx-auto">
           <div className="flex flex-wrap justify-center gap-4 mb-12">
             {categories.map((category) => (

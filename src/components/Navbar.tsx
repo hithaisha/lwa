@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 import { auth } from "../lib/firebase";
+import logo from "../assests/imgs/logo.jpeg"
 import {
   Users,
   LogOut,
@@ -130,7 +131,11 @@ const Navbar = () => {
           <div className="flex items-center space-x-4">
             <Link to="/" className="flex items-center space-x-3">
               <div className="bg-white p-1.5 md:p-2 rounded-full">
-                <Users className="h-6 w-6 md:h-8 md:w-8 text-blue-700" />
+                <img
+                  src={logo}
+                  alt="Luton Welfare Logo"
+                  className="h-8 w-8 md:h-10 md:w-10 object-contain"
+                />
               </div>
               <div>
                 <span className="font-bold text-lg md:text-2xl">
